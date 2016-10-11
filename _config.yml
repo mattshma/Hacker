@@ -23,6 +23,8 @@ disqus_shortname:
 # google analytics
 googleTrackId: 
 
+is_donate: true
 donate:
   wechat: ../../../../images/donate/wechat.jpg
   alipay: ../../../../images/donate/alipay.jpg
+donate_text: "欣赏此文？你可以打赏我，这会更鼓励我创作~！"
