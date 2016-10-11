@@ -1,0 +1,57 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/brew/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'https://github.com/CodeFalling/hexo-asset-image',
+1 verbose cli   '--save' ]
+2 info using npm@2.1.8
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/brew/bin/node
+5 silly cache add args [ 'https://github.com/CodeFalling/hexo-asset-image', null ]
+6 verbose cache add spec https://github.com/CodeFalling/hexo-asset-image
+7 silly cache add parsed spec { raw: 'https://github.com/CodeFalling/hexo-asset-image',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: 'https://github.com/CodeFalling/hexo-asset-image',
+7 silly cache add   spec: 'https://github.com/CodeFalling/hexo-asset-image',
+7 silly cache add   type: 'remote' }
+8 verbose addRemoteTarball https://github.com/CodeFalling/hexo-asset-image not in flight; adding
+9 verbose addRemoteTarball [ 'https://github.com/CodeFalling/hexo-asset-image', null ]
+10 info retry fetch attempt 1 at 10:25:10
+11 info attempt registry request try #1 at 10:25:10
+12 http fetch GET https://github.com/CodeFalling/hexo-asset-image
+13 verbose request id 1ee4a64491a9d01f
+14 http fetch 406 https://github.com/CodeFalling/hexo-asset-image
+15 error fetch failed https://github.com/CodeFalling/hexo-asset-image
+16 info retry will retry, error on last attempt: Error: fetch failed with status code 406
+17 info retry fetch attempt 2 at 10:25:25
+18 info attempt registry request try #1 at 10:25:25
+19 http fetch GET https://github.com/CodeFalling/hexo-asset-image
+20 http fetch 406 https://github.com/CodeFalling/hexo-asset-image
+21 error fetch failed https://github.com/CodeFalling/hexo-asset-image
+22 info retry will retry, error on last attempt: Error: fetch failed with status code 406
+23 info retry fetch attempt 3 at 10:26:30
+24 info attempt registry request try #1 at 10:26:30
+25 http fetch GET https://github.com/CodeFalling/hexo-asset-image
+26 http fetch 406 https://github.com/CodeFalling/hexo-asset-image
+27 error fetch failed https://github.com/CodeFalling/hexo-asset-image
+28 verbose stack Error: fetch failed with status code 406
+28 verbose stack     at Request.<anonymous> (/usr/local/brew/lib/node_modules/npm/node_modules/npm-registry-client/lib/fetch.js:52:14)
+28 verbose stack     at Request.emit (events.js:95:17)
+28 verbose stack     at Request.onRequestResponse (/usr/local/brew/lib/node_modules/npm/node_modules/request/request.js:1247:10)
+28 verbose stack     at ClientRequest.emit (events.js:95:17)
+28 verbose stack     at HTTPParser.parserOnIncomingClient [as onIncoming] (http.js:1692:21)
+28 verbose stack     at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:121:23)
+28 verbose stack     at CleartextStream.socketOnData [as ondata] (http.js:1587:20)
+28 verbose stack     at CleartextStream.read [as _read] (tls.js:513:12)
+28 verbose stack     at CleartextStream.Readable.read (_stream_readable.js:340:10)
+28 verbose stack     at EncryptedStream.write [as _write] (tls.js:368:25)
+29 verbose cwd /Users/maming/documents/blog/themes/hacker/layout/components
+30 error Darwin 14.5.0
+31 error argv "node" "/usr/local/brew/bin/npm" "install" "https://github.com/CodeFalling/hexo-asset-image" "--save"
+32 error node v0.10.33
+33 error npm  v2.1.8
+34 error fetch failed with status code 406
+35 error If you need help, you may report this error at:
+35 error     <http://github.com/npm/npm/issues>
+36 verbose exit [ 1, true ]

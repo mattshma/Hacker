@@ -8,7 +8,7 @@
   <nav class="site-navigation">
     <ul>
       <% for (var i in theme.menu){ %>
-        <li><a href="<%- url_for(theme.menu[i]) %>"><%= __(i) %></a></li>
+        <li><i class="<%- theme.menu[i]['icon'] %>"></i><a href="<%- url_for(theme.menu[i]['directory']) %>"><%= __(theme.menu[i]['name']) %></a></li>
       <% } %>
     </ul>
   </nav>

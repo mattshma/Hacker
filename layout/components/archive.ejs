@@ -10,26 +10,28 @@ if (page.archive){
 
 <article>
 
-  <h2 class="article-title <% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%= title %></h2>
+  <div class="article-title <% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%= title %></div>
 
   <div class="archive">
     <% page.posts.each(function(item){ %>
-      <div class="<%= item.layout %> archive">
-        <div class="archive-post">
-          <time datetime="<%= item.date.toDate().toISOString() %>">
-            <a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a>
-          </time>
-          <% if (item.link){ %>
-            <% if (item.title){ %>
-            <h3 class="archive-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h3>
+      <li>
+        <div class="<%= item.layout %> archive">
+          <div class="archive-post">
+            <time datetime="<%= item.date.toDate().toISOString() %>">
+              <%= item.date.format(config.date_format) %>
+            </time>
+            <% if (item.link){ %>
+              <% if (item.title){ %>
+              <span class="archive-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></span>
+              <% } else { %>
+              <span class="archive-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></span>
+              <% } %>
             <% } else { %>
-            <h3 class="archive-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h3>
+              <span class="archive-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></span>
             <% } %>
-          <% } else { %>
-            <h3 class="archive-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h3>
-          <% } %>
+          </div>
         </div>
-      </div>
+      </li>
     <% }); %>
     <%- partial('pagination') %>
   </div>

@@ -1,10 +1,20 @@
 menu:
-  Home: /
-  Archives: /archives
+  - name: Home 
+    directory: /
+    icon: icon-home
+  - name: Books
+    directory: /books
+    icon: icon-book
+  - name: Archives
+    directory: /archives
+    icon: icon-archive
+  - name: About
+    directory: /about
+    icon: icon-user
 
 # duoshuo comment
-duoshuo: false
-duoshuo_name: 
+duoshuo: ture
+duoshuo_name: mattshma
 
 # disqus comment
 disqus: false
@@ -12,3 +22,7 @@ disqus_shortname:
 
 # google analytics
 googleTrackId: 
+
+donate:
+  wechat: ../../../../images/donate/wechat.jpg
+  alipay: ../../../../images/donate/alipay.jpg

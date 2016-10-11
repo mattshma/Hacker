@@ -7,9 +7,11 @@ archive_a: Archives
 archive_b: "Archives: %s"
 page: Page %d
 recent_posts: Recent Posts
+read_more: Read More 
 
 Home: Home
 Archives: Archives
 About: About
 Links: Links
+Books: Books
 RSS: RSS

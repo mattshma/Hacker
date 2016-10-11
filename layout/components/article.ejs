@@ -16,14 +16,11 @@
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="<%- config.root %><%- item.path %>" rel="bookmark">
         <time class="entry-date published" datetime="<%= item.date.toDate().toISOString() %>">
           <%= item.date.format(config.date_format) %>
         </time>
-      </a>
     </span>
   </div>
-
 
   <% if (item.photos && item.photos.length){ %>
   <div class="featured-media">
@@ -43,12 +40,36 @@
     <div class="entry">
       <% if (item.excerpt && index){ %>
         <%- item.excerpt %>
+        <div class="alignleft">
+            <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= __('read_more') %></a>
+        </div>
       <% } else { %>
         <%- item.content %>
       <% } %>
     </div>
-
   </div>
+
+  <% if (!index){ %>
+    <div class="article-donate">
+      <div id="donate-board">
+          <span class="donate-text">欣赏此文？求鼓励，求支持！</span>
+          <br>
+       </div>  
+
+      <!-- 支付宝打赏图案 -->
+       <div id="donate-imgs"> 
+          <div class="donate-img">
+            <img src="<%- __(theme.donate['alipay']) %>" title="支付宝打赏" height="250px" width="250px">
+            </a> 
+          </div>  
+      <!-- 微信打赏图案 -->
+          <div class="donate-img">
+            <img src="<%- __(theme.donate['wechat']) %>" title="微信打赏" height="250px" width="250px">
+            </a> 
+          </div>
+        </div>
+    </div>
+  <% } %>
 
   <div class="article-footer">
     <div class="article-meta pull-left">
@@ -62,31 +83,30 @@
       %>
 
     <span class="post-categories">
-      <i class="icon-categories"></i>
+      <i class="icon-folder-open"></i>
         <%- cats.join(', ') %>
     </span>
     <% } %>
 
     <% if (item.tags && item.tags.length){ %>
-    <%
-        var tags = [];
-        item.tags.forEach(function(tag){
-            tags.push('<a href="' + config.root + tag.path + '">' + tag.name + '</a>');
-        });
-    %>
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <%- tags.join('') %>
-    </span>
+       <%
+           var tags = [];
+           item.tags.forEach(function(tag){
+               tags.push('<a href="' + config.root + tag.path + '">' + tag.name + '</a>');
+           });
+       %>
+       <span class="post-tags">
+         <i class="icon-tags"></i>
+           <%- tags.join('') %>
+       </span>
     <% } %>
 
     </div>
 
-    <% if (index && (theme.duoshuo || theme.disqus)){ %>
+    <% if (index && (theme.duoshuo || theme.disqus) && !item.excerpt){ %>
     <div class="article-meta pull-right">
       <span>
-        <i class="icon-comments"></i>
+        <i class="icon-comment"></i>
         <span>
           <a href="<%- item.path %>#comment"><%- __('comment') %></a>
         </span>
